@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "oeis-code"
 version = "0.1.0"
 authors = [
-    { name = "Author Name", email = "author@example.com" },
+    { name = "Enrique Pérez Herrero", email = "enrique.perez@example.com" },
 ]
 description = "Mini OEIS in Python with PARI/GP support"
 readme = "README.md"
@@ -24,8 +24,8 @@ pari = ["cypari2"]
 test = ["pytest"]
 
 [project.urls]
-"Homepage" = "https://github.com/user/oeis-code"
-"Bug Tracker" = "https://github.com/user/oeis-code/issues"
+"Homepage" = "https://github.com/oeistools/oeis-code"
+"Bug Tracker" = "https://github.com/oeistools/oeis-code/issues"
 
 [tool.setuptools]
 packages = ["oeis_code"]
