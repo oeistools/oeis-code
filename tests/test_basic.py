@@ -1,5 +1,7 @@
 import pytest
+
 from oeis_code import get
+
 
 def test_fibonacci():
     assert get("A000045", 0) == []

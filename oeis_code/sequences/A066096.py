@@ -3,11 +3,13 @@ A066096 - lower Wythoff sequence: floor(n*phi), where phi = (1 + sqrt(5))/2.
 https://oeis.org/A066096
 """
 
-from typing import List, Literal
 from functools import lru_cache
 from math import floor, sqrt
-from ..registry import register
+from typing import List, Literal
+
 from ..backends import pari as pari_backend
+from ..registry import register
+
 
 @register("A066096")
 @lru_cache(maxsize=128)

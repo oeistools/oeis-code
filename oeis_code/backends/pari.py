@@ -1,5 +1,4 @@
 
-from typing import List
 
 try:
     from cypari2 import Pari

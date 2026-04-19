@@ -1,6 +1,8 @@
 
 from typing import List
+
 from ..utils.math import is_prime
+
 
 def primes(n: int) -> List[int]:
     """

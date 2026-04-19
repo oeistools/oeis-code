@@ -1,7 +1,7 @@
-from typing import Any, List, Union, Literal
-from .registry import registry
+from typing import Any, List, Literal
+
 from .backends import pari as pari_backend
-from .backends import python as py_backend
+from .registry import registry
 
 BackendType = Literal["auto", "pari", "python"]
 

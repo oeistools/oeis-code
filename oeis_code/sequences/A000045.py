@@ -3,11 +3,13 @@ A000045 - Fibonacci numbers
 https://oeis.org/A000045
 """
 
-from typing import List, Literal
 from functools import lru_cache
-from ..registry import register
+from typing import List, Literal
+
 from ..backends import pari as pari_backend
 from ..backends import python as py_backend
+from ..registry import register
+
 
 @register("A000045")
 @lru_cache(maxsize=128)

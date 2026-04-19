@@ -1,5 +1,6 @@
 import math
 
+
 def is_prime(n: int) -> bool:
     """
     Check if a number is prime using trial division.
