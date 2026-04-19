@@ -20,9 +20,8 @@ def sequence(n: int, backend: Literal["python", "pari"] = "python") -> List[int]
     """
     if backend == "pari" and pari_backend.AVAILABLE:
         return [
-            int(pari_backend.pari(f"({k} + sqrtint(5*{k}^2)) \\ 2"))
-            for k in range(n)
+            int(pari_backend.pari(f"({k} + sqrtint(5*{k}^2)) \\ 2")) for k in range(n)
         ]
-    
+
     phi = (1 + sqrt(5)) / 2
     return [floor(k * phi) for k in range(n)]

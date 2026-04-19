@@ -5,6 +5,7 @@ from .registry import registry
 
 BackendType = Literal["auto", "pari", "python"]
 
+
 def get(seq_id: str, n: int, backend: BackendType = "auto") -> List[Any]:
     """
     Get the first n terms of an OEIS sequence.

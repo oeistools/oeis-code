@@ -1,4 +1,3 @@
-
 from typing import List
 
 from ..utils.math import is_prime
@@ -21,6 +20,7 @@ def primes(n: int) -> List[int]:
             res.append(num)
         num += 1
     return res
+
 
 def fibonacci(n: int) -> List[int]:
     """
