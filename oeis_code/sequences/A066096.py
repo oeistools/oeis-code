@@ -13,15 +13,13 @@ from ..registry import register
 
 @register("A066096")
 @lru_cache(maxsize=128)
-def sequence(n: int, backend: Literal["python", "pari"] = "python") -> List[int]:
+def sequence(n: int, backend: Literal["python", "pari"] = "python") -> int:
     """
-    Generate the first n terms of the lower Wythoff sequence.
+    Get the n-th term of the lower Wythoff sequence.
     a(n) = floor(n * phi)
     """
     if backend == "pari" and pari_backend.AVAILABLE:
-        return [
-            int(pari_backend.pari(f"({k} + sqrtint(5*{k}^2)) \\ 2")) for k in range(n)
-        ]
+        return int(pari_backend.pari(f"({n} + sqrtint(5*{n}^2)) \\ 2"))
 
     phi = (1 + sqrt(5)) / 2
-    return [floor(k * phi) for k in range(n)]
+    return floor(n * phi)

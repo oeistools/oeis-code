@@ -19,8 +19,8 @@ pip install cypari2  # optional
 ```python
 from oeis_code import get
 
-# Get the first 10 Fibonacci numbers
-get("A000045", 10)
+# Get the 10th Fibonacci number
+get("A000045", 10)  # Returns 55
 ```
 
 ## Contributing

@@ -6,18 +6,18 @@ from .registry import registry
 BackendType = Literal["auto", "pari", "python"]
 
 
-def get(seq_id: str, n: int, backend: BackendType = "auto") -> List[Any]:
+def get(seq_id: str, n: int, backend: BackendType = "auto") -> Any:
     """
-    Get the first n terms of an OEIS sequence.
+    Get the n-th term of an OEIS sequence.
 
     Args:
         seq_id: The OEIS identifier (e.g., 'A000045').
-        n: The number of terms to retrieve.
+        n: The index of the term to retrieve.
         backend: The backend to use ('auto', 'pari', or 'python').
             'auto' will prioritize PARI/GP if available.
 
     Returns:
-        A list containing the first n terms of the sequence.
+        The n-th term of the sequence.
 
     Raises:
         ValueError: If the sequence ID is not found in the registry.

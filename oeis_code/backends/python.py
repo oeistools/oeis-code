@@ -1,45 +1,35 @@
-from typing import List
-
-from ..utils.math import is_prime
+from ..utils.math import fibonacci_term, is_prime
 
 
-def primes(n: int) -> List[int]:
+def n_th_prime(n: int) -> int:
     """
-    Generate the first n prime numbers.
+    Get the n-th prime number (1-indexed).
 
     Args:
-        n: The number of primes to generate.
+        n: The index of the prime.
 
     Returns:
-        A list of the first n prime numbers.
+        The n-th prime number.
     """
-    res: List[int] = []
+    count = 0
     num = 2
-    while len(res) < n:
+    while count < n:
         if is_prime(num):
-            res.append(num)
+            count += 1
+            if count == n:
+                return num
         num += 1
-    return res
+    return num
 
 
-def fibonacci(n: int) -> List[int]:
+def fibonacci(n: int) -> int:
     """
-    Generate the first n Fibonacci numbers.
+    Get the n-th Fibonacci number.
 
     Args:
-        n: The number of Fibonacci terms to generate.
+        n: The index of the Fibonacci number.
 
     Returns:
-        A list of the first n Fibonacci numbers.
+        The n-th Fibonacci number.
     """
-    if n <= 0:
-        return []
-    res = [0]
-    if n == 1:
-        return res
-    res.append(1)
-    a, b = 0, 1
-    while len(res) < n:
-        a, b = b, a + b
-        res.append(b)
-    return res
+    return fibonacci_term(n)

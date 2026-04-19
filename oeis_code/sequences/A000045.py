@@ -13,11 +13,11 @@ from ..registry import register
 
 @register("A000045")
 @lru_cache(maxsize=128)
-def sequence(n: int, backend: Literal["python", "pari"] = "python") -> List[int]:
+def sequence(n: int, backend: Literal["python", "pari"] = "python") -> int:
     """
-    Generate the first n Fibonacci numbers.
+    Get the n-th Fibonacci number.
     A000045: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
     """
     if backend == "pari" and pari_backend.AVAILABLE:
-        return [pari_backend.fibonacci(i) for i in range(n)]
+        return pari_backend.fibonacci(n)
     return py_backend.fibonacci(n)
