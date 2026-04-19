@@ -7,7 +7,7 @@
 Mini OEIS in Python with PARI/GP support.
 
 ## Installation
-
+:
 ```bash
 pip install cypari2  # optional
 ```
