@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oeis-code"
+version = "0.1.0"
+authors = [
+    { name = "Author Name", email = "author@example.com" },
+]
+description = "Mini OEIS in Python with PARI/GP support"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pari = ["cypari2"]
+test = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/user/oeis-code"
+"Bug Tracker" = "https://github.com/user/oeis-code/issues"
+
+[tool.setuptools]
+packages = ["oeis_code"]
+
+[tool.setuptools.package-data]
+oeis_code = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

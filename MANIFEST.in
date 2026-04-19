@@ -1,0 +1,23 @@
+# Include documentation files
+include README.md
+include LICENSE
+
+# Include package configuration files
+include pyproject.toml
+include setup.cfg
+
+# Include all source code
+recursive-include oeis_code *.py
+
+# Include tests (optional but recommended for distribution)
+recursive-include tests *.py
+
+# Exclude caches and unnecessary files
+global-exclude __pycache__/*
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+
+# Exclude system files
+global-exclude .DS_Store
+global-exclude *.swp
