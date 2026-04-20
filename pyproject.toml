@@ -20,7 +20,7 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-pari = ["cypari2"]
+pari = ["cypari2>=2.2.0"]
 test = ["pytest"]
 
 [project.urls]

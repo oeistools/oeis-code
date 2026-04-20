@@ -27,7 +27,7 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libpari-dev pari-gp
+        sudo apt-get install -y build-essential python3-dev libgmp-dev libpari-dev pari-gp
         
     - name: Install Python dependencies
       run: |
