@@ -5,7 +5,7 @@ https://oeis.org/A066096
 
 from functools import lru_cache
 from math import floor, sqrt
-from typing import List, Literal
+from typing import Literal
 
 from ..backends import pari as pari_backend
 from ..registry import register

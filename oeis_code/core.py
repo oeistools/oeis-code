@@ -1,4 +1,4 @@
-from typing import Any, List, Literal
+from typing import Any, Literal
 
 from .backends import pari as pari_backend
 from .registry import registry

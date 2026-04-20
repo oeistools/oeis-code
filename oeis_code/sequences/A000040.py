@@ -4,7 +4,7 @@ https://oeis.org/A000040
 """
 
 from functools import lru_cache
-from typing import List, Literal
+from typing import Literal
 
 from ..backends import pari as pari_backend
 from ..backends import python as py_backend

@@ -9,9 +9,31 @@
 Mini OEIS in Python with PARI/GP support.
 
 ## Installation
-:
+
 ```bash
-pip install cypari2  # optional
+pip install oeis-code
+```
+
+### PARI/GP Support (Optional)
+
+To use the PARI/GP backend, you need `cypari2`. Note that this requires PARI/GP development headers installed on your system.
+
+**Debian/Ubuntu:**
+```bash
+sudo apt install libpari-dev
+pip install cypari2
+```
+
+**Fedora:**
+```bash
+sudo dnf install pari-devel
+pip install cypari2
+```
+
+**macOS (using Homebrew):**
+```bash
+brew install pari
+pip install cypari2
 ```
 
 ## Usage
