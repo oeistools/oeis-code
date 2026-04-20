@@ -20,7 +20,7 @@ To use the PARI/GP backend, you need `cypari2`. Note that this requires PARI/GP 
 
 **Debian/Ubuntu:**
 ```bash
-sudo apt install libpari-dev
+sudo apt install libpari-dev pari-gp
 pip install cypari2
 ```
 

@@ -27,7 +27,7 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libpari-dev
+        sudo apt-get install -y libpari-dev pari-gp
         
     - name: Install Python dependencies
       run: |
