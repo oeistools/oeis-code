@@ -1,23 +1,21 @@
-# Include documentation files
+# --- Core metadata ---
 include README.md
 include LICENSE
 
-# Include package configuration files
+# --- Build / config ---
 include pyproject.toml
 include setup.cfg
 
-# Include all source code
+# --- Package data (only needed if not handled by setuptools config) ---
 recursive-include oeis_code *.py
+recursive-include oeis_code *.pyi
+recursive-include oeis_code py.typed
 
-# Include tests (optional but recommended for distribution)
+# --- Tests (optional: include for sdist, not needed for wheels) ---
 recursive-include tests *.py
 
-# Exclude caches and unnecessary files
-global-exclude __pycache__/*
-global-exclude *.pyc
-global-exclude *.pyo
-global-exclude *.pyd
+# --- Exclude junk ---
+global-exclude __pycache__ *.py[cod] *.so
 
-# Exclude system files
-global-exclude .DS_Store
-global-exclude *.swp
+# --- Exclude editor / OS files ---
+global-exclude .DS_Store *.swp *.swo
