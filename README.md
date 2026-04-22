@@ -1,10 +1,12 @@
 # oeis-code
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
-[![Tests](https://github.com/oeistools/oeis-code/actions/workflows/tests.yml/badge.svg)](https://github.com/oeistools/oeis-code/actions/workflows/tests.yml)
-[![Linting](https://github.com/oeistools/oeis-code/actions/workflows/lint.yml/badge.svg)](https://github.com/oeistools/oeis-code/actions/workflows/lint.yml)
+[![CI](https://github.com/oeistools/oeis-code/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/oeistools/oeis-code/actions/workflows/tests.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/oeistools/oeis-code/graph/badge.svg)](https://codecov.io/gh/oeistools/oeis-code)
+[![PyPI version](https://img.shields.io/pypi/v/oeis-code.svg?cacheSeconds=60)](https://pypi.org/project/oeis-code/)
+[![Python versions](https://img.shields.io/pypi/pyversions/oeis-code.svg)](https://pypi.org/project/oeis-code/)
+[![Wheel](https://img.shields.io/pypi/wheel/oeis-code.svg)](https://pypi.org/project/oeis-code/)
+[![Package format](https://img.shields.io/pypi/format/oeis-code.svg)](https://pypi.org/project/oeis-code/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Mini OEIS in Python with PARI/GP support.
 
