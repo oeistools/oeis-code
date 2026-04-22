@@ -1,41 +1,63 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = [
+    "setuptools>=69",
+    "wheel"
+]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "oeis-code"
-version = "0.1.0"
+dynamic = ["version"]
 authors = [
-    { name = "Enrique Pérez Herrero", email = "enrique.perez@example.com" },
+    { name = "Enrique Pérez Herrero", email = "energycode.org@gmail.com" },
 ]
 description = "Mini OEIS in Python with PARI/GP support"
 readme = "README.md"
 requires-python = ">=3.8"
+license = { text = "MIT" }
+
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Mathematics",
 ]
+
 dependencies = []
 
 [project.optional-dependencies]
 pari = ["cypari2>=2.1.4"]
-test = ["pytest", "pytest-cov"]
+test = [
+    "pytest>=7",
+    "pytest-cov>=4"
+]
 
 [project.urls]
-"Homepage" = "https://github.com/oeistools/oeis-code"
+Homepage = "https://github.com/oeistools/oeis-code"
 "Bug Tracker" = "https://github.com/oeistools/oeis-code/issues"
 
 [tool.setuptools]
 packages = ["oeis_code"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = { attr = "oeis_code.__version__" }
 
 [tool.setuptools.package-data]
 oeis_code = ["py.typed"]
 
+# ✅ FIX: pytest config moved here
+[tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-addopts = "-ra -q --cov=oeis_code --cov-report=xml --cov-report=term"
+addopts = [
+    "-ra",
+    "-q",
+    "--cov=oeis_code",
+    "--cov-report=xml",
+    "--cov-report=term"
+]
 
 [tool.ruff]
 line-length = 88
