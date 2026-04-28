@@ -38,7 +38,9 @@ jobs:
           # cypari2 < 2.2.0 (for Python < 3.12) is incompatible with Cython 3+
           # Using PIP_CONSTRAINT ensures this is respected even in isolated builds
           echo "cython<3.0" > constraints.txt
+          echo "cypari2<2.2" >> constraints.txt
           export PIP_CONSTRAINT=constraints.txt
+          export PIP_BUILD_CONSTRAINT=constraints.txt
         fi
         pip install -e ".[dev,pari]"
         
