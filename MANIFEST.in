@@ -7,9 +7,9 @@ include pyproject.toml
 include setup.cfg
 
 # --- Package data (only needed if not handled by setuptools config) ---
-recursive-include oeis_code *.py
-recursive-include oeis_code *.pyi
-recursive-include oeis_code py.typed
+recursive-include src/oeis_code *.py
+recursive-include src/oeis_code *.pyi
+recursive-include src/oeis_code py.typed
 
 # --- Tests (optional: include for sdist, not needed for wheels) ---
 recursive-include tests *.py
