@@ -1,72 +1,33 @@
 # Usage Guide
 
-This guide covers the core functionalities of `oeis-tools` with practical examples.
+This guide covers the core functionalities of `oeis-code`.
 
-## Plotting Data
+## Getting Sequence Terms
 
-You can quickly plot sequence data using the built-in matplotlib integration in the `BFile` class. This is particularly useful for observing the behavior of integer sequences visually.
-
-### Example: Plotting a Single Sequence
+The primary interface is the `get()` function. It evaluates the sequence at a given index.
 
 ```python
-import matplotlib.pyplot as plt
-from oeis_tools import BFile
+from oeis_code import get
 
-# Fetch the Fibonacci sequence b-file
-bfile = BFile("A000045")
-
-# Plot the first 80 points using a scatter plot
-bfile.plot_data(80, plot_style="scatter", color="black")
+# Get the 10th Fibonacci number
+val = get("A000045", 10)
+print(val) # 55
 ```
 
-### Example: Overlaying Sequences
+## Adding Sequences
 
-You can use the `ax` parameter to overlay multiple sequences on the same matplotlib axes.
+To add sequences to `oeis-code`, you register them in the `src/oeis_code/sequences/` directory:
 
 ```python
-import matplotlib.pyplot as plt
-from oeis_tools import BFile
+from oeis_code.registry import register
 
-N_POINTS = 200
-
-bfile1 = BFile("A114906")
-bfile2 = BFile("A114904")
-
-fig, ax = plt.subplots()
-
-# Plot first sequence in red without showing the figure yet
-bfile1.plot_data(n=N_POINTS, ax=ax, show=False, color="red")
-
-# Plot second sequence in blue and show the figure
-bfile2.plot_data(n=N_POINTS, ax=ax, show=True, color="blue")
+@register("A000045")
+def sequence(n):
+    if n <= 1:
+        return n
+    return sequence(n - 1) + sequence(n - 2)
 ```
 
-## Retrieving Metadata
+## Backends
 
-The `Sequence` class fetches the extensive metadata provided by the OEIS JSON API.
-
-```python
-from oeis_tools import Sequence
-
-seq = Sequence("A000045")
-
-print(f"ID: {seq.id}")
-print(f"Name: {seq.name}")
-print(f"Author: {seq.author}")
-print(f"Keywords: {seq.keyword}")
-
-# Get the first few terms of the sequence
-print(f"Data: {seq.data[:10]}")
-```
-
-## Creating Custom B-Files
-
-If you generate an OEIS sequence locally, you can create a compliant b-file using `create_bfile`.
-
-```python
-from oeis_tools.bfile import create_bfile
-
-my_sequence = [1, 2, 3, 5, 8, 13]
-# Generates b213676.txt in the current directory starting from n=1
-create_bfile("A213676", my_sequence, offset=1)
-```
+`oeis-code` provides fallbacks and PARI/GP bindings for high performance sequence calculations. Ensure you have `pari-gp` installed on your system to take advantage of the advanced `cypari2` backend.

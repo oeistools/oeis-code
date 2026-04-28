@@ -16,7 +16,7 @@ jobs:
       contents: read
     environment:
       name: pypi
-      url: https://pypi.org/p/oeis-tools
+      url: https://pypi.org/p/oeis-code
 
     steps:
       - name: Check out repository

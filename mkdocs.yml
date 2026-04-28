@@ -43,8 +43,8 @@ nav:
   - Home: index.md
   - Usage Guide: usage.md
   - API Reference:
-      - Sequence: reference/sequence.md
-      - BFile: reference/bfile.md
+      - Core: reference/core.md
+      - Registry: reference/registry.md
       - Utils: reference/utils.md
 
 plugins:

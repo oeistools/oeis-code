@@ -1,26 +1,22 @@
-# oeis-tools
+# oeis-code
 
-A focused Python toolkit for working with OEIS integer sequences: fetch metadata, parse b-files, and plot sequence values quickly.
+Mini OEIS in Python with PARI/GP support.
 
 ## Overview
 
-Welcome to the `oeis-tools` documentation. This library allows you to interact with the Online Encyclopedia of Integer Sequences (OEIS) programmatically.
-
-- **Fast & Lightweight:** Fetch sequence metadata and data without bloat.
-- **Plotting:** Built-in `matplotlib` integration for visualizing sequence data.
-- **Robust:** Includes utilities to parse and cache `b-files`.
+Welcome to the `oeis-code` documentation. This library allows you to interact with the Online Encyclopedia of Integer Sequences (OEIS) programmatically using native Python and PARI/GP backends.
 
 ## Quick Start
 
 ```bash
-pip install oeis-tools
+pip install oeis-code
 ```
 
 ```python
-import oeis_tools as ot
+from oeis_code import get
 
-seq = ot.Sequence("A000045")
-print(seq.name)  # Fibonacci numbers
+# Get the 10th Fibonacci number
+get("A000045", 10)  # Returns 55
 ```
 
-Check out the [Usage Guide](usage.md) for plotting examples and the [API Reference](reference/sequence.md) to see all the available classes and functions.
+Check out the [Usage Guide](usage.md) and the [API Reference](reference/core.md) to see all the available classes and functions.

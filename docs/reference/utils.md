@@ -1,5 +1,3 @@
-# Utils API
+# Utilities
 
-::: oeis_tools.utils
-    options:
-      show_root_heading: true
+::: oeis_code.utils.math
