@@ -133,6 +133,31 @@ def test_fibonacci_term_sequence():
 
 
 # ---------------------------------------------------------------------------
+# A109261 — Self-inverse Beatty permutation (alpha = sqrt(2)^sqrt(2))
+# ---------------------------------------------------------------------------
+
+
+def test_A109261_known_values():
+    # A109261 (from OEIS b-file): 2,1,5,7,3,10,4,12,15,6,18,8,20,23,9,...
+    expected = {1: 2, 2: 1, 3: 5, 4: 7, 5: 3, 6: 10, 7: 4, 8: 12, 9: 15, 10: 6}
+    for n, val in expected.items():
+        assert get("A109261", n) == val, f"A109261({n}) expected {val}"
+
+
+def test_A109261_self_inverse():
+    """a(a(n)) == n for all n (self-inverse permutation)."""
+    for n in range(1, 16):
+        assert get("A109261", get("A109261", n)) == n
+
+
+def test_A109261_invalid_input():
+    from oeis_code.sequences.A109261 import sequence as A109261_seq
+
+    with pytest.raises(ValueError, match="n must be >= 1"):
+        A109261_seq(0)
+
+
+# ---------------------------------------------------------------------------
 # Core API
 # ---------------------------------------------------------------------------
 
