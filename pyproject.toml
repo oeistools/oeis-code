@@ -55,7 +55,9 @@ docs = [
 
 [project.urls]
 Homepage = "https://github.com/oeistools/oeis-code"
+Documentation = "https://oeistools.github.io/oeis-code/"
 "Bug Tracker" = "https://github.com/oeistools/oeis-code/issues"
+Changelog = "https://github.com/oeistools/oeis-code/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
@@ -77,14 +79,15 @@ python_files = ["test_*.py"]
 addopts = [
     "-ra",
     "-q",
-    "--cov=oeis_code",
+    "--import-mode=importlib",
+    "--cov=src/oeis_code",
     "--cov-report=xml",
-    "--cov-report=term"
+    "--cov-report=term-missing"
 ]
 
 [tool.ruff]
 line-length = 88
-target-version = "py38"
+target-version = "py39"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "UP", "B"]
