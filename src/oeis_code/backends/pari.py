@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 try:
     from cypari2 import Pari  # type: ignore
 

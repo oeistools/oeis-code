@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 from ..utils.math import fibonacci_term, is_prime
 
 

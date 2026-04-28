@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 """
 A016993 - a(n) = 7*n + 1.
 https://oeis.org/A016993

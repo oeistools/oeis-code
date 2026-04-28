@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 """
 A000045 - Fibonacci numbers
 https://oeis.org/A000045

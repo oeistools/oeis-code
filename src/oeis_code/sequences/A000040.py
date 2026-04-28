@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 """
 A000040 - Prime numbers
 https://oeis.org/A000040

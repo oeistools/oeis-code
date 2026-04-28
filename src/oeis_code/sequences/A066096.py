@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 """
 A066096 - lower Wythoff sequence: floor(n*phi), where phi = (1 + sqrt(5))/2.
 https://oeis.org/A066096

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 site_name: oeis-code
 site_description: Mini OEIS in Python with PARI/GP support.
 site_url: https://oeistools.github.io/oeis-code/

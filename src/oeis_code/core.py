@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 from typing import Any, Literal
 
 from .backends import pari as pari_backend

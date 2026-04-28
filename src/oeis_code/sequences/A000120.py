@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Enrique Pérez Herrero
+
 """
 A000120 - 1's-counting sequence: number of 1's in binary expansion of n.
 https://oeis.org/A000120
