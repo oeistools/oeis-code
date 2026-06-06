@@ -48,6 +48,7 @@ def test_pari_available_functionality():
     # Test through core get()
     assert get("A000045", 10, backend="pari") == 55
     assert get("A000040", 5, backend="pari") == 11
+    assert get("A000201", 5, backend="pari") == 8
 
 
 def test_pari_auto_backend():
@@ -57,3 +58,4 @@ def test_pari_auto_backend():
     # This should work in both cases
     assert get("A000045", 10, backend="auto") == 55
     assert get("A000040", 5, backend="auto") == 11
+    assert get("A000201", 5, backend="auto") == 8

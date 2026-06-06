@@ -84,6 +84,18 @@ def test_lower_wythoff():
 
 
 # ---------------------------------------------------------------------------
+# A000201 — Lower Wythoff sequence (1-indexed): floor(n * phi)
+# ---------------------------------------------------------------------------
+
+
+def test_a000201():
+    # A000201: 1, 3, 4, 6, 8, 9, 11, 12, 14, 16, ...
+    expected = {1: 1, 2: 3, 3: 4, 4: 6, 5: 8, 6: 9, 7: 11, 8: 12, 9: 14, 10: 16}
+    for n, val in expected.items():
+        assert get("A000201", n) == val
+
+
+# ---------------------------------------------------------------------------
 # utils.math — is_prime edge cases
 # ---------------------------------------------------------------------------
 
@@ -154,6 +166,13 @@ def test_a109261_invalid_input():
 
     with pytest.raises(ValueError, match="n must be >= 1"):
         seq_a109261(0)
+
+
+def test_a000201_invalid_input():
+    from oeis_code.sequences.A000201 import sequence as seq_a000201
+
+    with pytest.raises(ValueError, match="n must be >= 1"):
+        seq_a000201(0)
 
 
 # ---------------------------------------------------------------------------
