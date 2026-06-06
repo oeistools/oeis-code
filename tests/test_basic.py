@@ -6,7 +6,6 @@ import pytest
 from oeis_code import get
 from oeis_code.utils.math import fibonacci_term, is_prime
 
-
 # ---------------------------------------------------------------------------
 # A000045 — Fibonacci numbers
 # ---------------------------------------------------------------------------
@@ -41,10 +40,10 @@ def test_primes():
 
 
 def test_hamming_weight():
-    assert get("A000120", 0) == 0   # 0b0
-    assert get("A000120", 1) == 1   # 0b1
-    assert get("A000120", 5) == 2   # 0b101
-    assert get("A000120", 7) == 3   # 0b111
+    assert get("A000120", 0) == 0  # 0b0
+    assert get("A000120", 1) == 1  # 0b1
+    assert get("A000120", 5) == 2  # 0b101
+    assert get("A000120", 7) == 3  # 0b111
     assert get("A000120", 255) == 8  # 0b11111111
 
 
@@ -53,7 +52,7 @@ def test_hamming_weight():
 # ---------------------------------------------------------------------------
 
 
-def test_A016993():
+def test_a016993():
     assert get("A016993", 0) == 1
     assert get("A016993", 1) == 8
     assert get("A016993", 5) == 36
@@ -65,7 +64,7 @@ def test_A016993():
 # ---------------------------------------------------------------------------
 
 
-def test_A017053():
+def test_a017053():
     assert get("A017053", 0) == 6
     assert get("A017053", 1) == 13
     assert get("A017053", 5) == 41
@@ -137,24 +136,24 @@ def test_fibonacci_term_sequence():
 # ---------------------------------------------------------------------------
 
 
-def test_A109261_known_values():
+def test_a109261_known_values():
     # A109261 (from OEIS b-file): 2,1,5,7,3,10,4,12,15,6,18,8,20,23,9,...
     expected = {1: 2, 2: 1, 3: 5, 4: 7, 5: 3, 6: 10, 7: 4, 8: 12, 9: 15, 10: 6}
     for n, val in expected.items():
         assert get("A109261", n) == val, f"A109261({n}) expected {val}"
 
 
-def test_A109261_self_inverse():
+def test_a109261_self_inverse():
     """a(a(n)) == n for all n (self-inverse permutation)."""
     for n in range(1, 16):
         assert get("A109261", get("A109261", n)) == n
 
 
-def test_A109261_invalid_input():
-    from oeis_code.sequences.A109261 import sequence as A109261_seq
+def test_a109261_invalid_input():
+    from oeis_code.sequences.A109261 import sequence as seq_a109261
 
     with pytest.raises(ValueError, match="n must be >= 1"):
-        A109261_seq(0)
+        seq_a109261(0)
 
 
 # ---------------------------------------------------------------------------

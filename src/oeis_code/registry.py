@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
-from typing import Any, Callable, Dict
+from typing import Any, Callable
 
-registry: Dict[str, Callable[..., Any]] = {}
+registry: dict[str, Callable[..., Any]] = {}
 
 
 def register(seq_id: str) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
