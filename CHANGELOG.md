@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Docs: add the missing javascripts/mathjax.js, the logo as theme.icon.logo and a real favicon (assets/favicon.svg), no Google Fonts (font: false) and no polyfill.io.
+
 ## [0.1.0] - 2026-04-28
 
 ### Added
