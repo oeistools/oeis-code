@@ -3,6 +3,7 @@
 
 """
 A000201 - Lower Wythoff sequence: floor(n*phi), where phi = (1 + sqrt(5))/2.
+
 https://oeis.org/A000201
 """
 
@@ -19,6 +20,7 @@ from ..registry import register
 def sequence(n: int, backend: Literal["python", "pari"] = "python") -> int:
     """
     Get the n-th term of the lower Wythoff sequence.
+
     a(n) = floor(n * phi), where phi = (1 + sqrt(5))/2.
     n must be >= 1.
     """

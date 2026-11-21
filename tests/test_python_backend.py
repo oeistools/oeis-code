@@ -102,6 +102,7 @@ def test_a000120_bin_fallback(monkeypatch):
     original_seq = a000120_seq.__wrapped__  # unwrap lru_cache
 
     def patched_seq(n: int, backend: str = "python") -> int:
+        """Call the unwrapped A000120 sequence with a non-bit_count integer."""
         # Delegate to original but swap n for a _NoBC instance
         n_no_bc = _NoBC(n)
         return original_seq(n_no_bc, backend)

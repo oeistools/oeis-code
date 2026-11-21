@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
+"""PARI/GP backend: computes terms through cypari2 when it can be imported."""
+
 try:
     from cypari2 import Pari  # type: ignore
 
@@ -12,6 +14,7 @@ except (ImportError, ModuleNotFoundError):
 
 
 def _check_available() -> None:
+    """Raise ImportError if the PARI/GP backend is not available."""
     if not AVAILABLE:
         raise ImportError(
             "The PARI/GP backend is not available. "

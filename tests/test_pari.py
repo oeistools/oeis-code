@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
+"""Tests for the PARI/GP backend, its fallback and backend="auto" selection."""
+
 import pytest
 
 from oeis_code import get
@@ -16,9 +18,7 @@ def test_pari_status():
     pari_backend.AVAILABLE, reason="PARI is available, skipping fallback tests"
 )
 def test_pari_not_available_fallback():
-    """
-    Test fallback behavior when PARI/GP is NOT available.
-    """
+    """Test fallback behavior when PARI/GP is NOT available."""
     assert not pari_backend.AVAILABLE
     assert pari_backend.pari is None
 
@@ -34,9 +34,7 @@ def test_pari_not_available_fallback():
     not pari_backend.AVAILABLE, reason="PARI is NOT available, skipping backend tests"
 )
 def test_pari_available_functionality():
-    """
-    Test backend functionality when PARI/GP IS available.
-    """
+    """Test backend functionality when PARI/GP IS available."""
     assert pari_backend.AVAILABLE
     assert pari_backend.pari is not None
 
@@ -52,9 +50,7 @@ def test_pari_available_functionality():
 
 
 def test_pari_auto_backend():
-    """
-    Test that backend='auto' always works regardless of PARI availability.
-    """
+    """Test that backend='auto' always works regardless of PARI availability."""
     # This should work in both cases
     assert get("A000045", 10, backend="auto") == 55
     assert get("A000040", 5, backend="auto") == 11

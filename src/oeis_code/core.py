@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
+"""Public entry point: ``get`` dispatches a request to a registered sequence."""
+
 from typing import Any, Literal
 
 from .backends import pari as pari_backend
@@ -13,17 +15,24 @@ def get(seq_id: str, n: int, backend: BackendType = "auto") -> Any:
     """
     Get the n-th term of an OEIS sequence.
 
-    Args:
-        seq_id: The OEIS identifier (e.g., 'A000045').
-        n: The index of the term to retrieve.
-        backend: The backend to use ('auto', 'pari', or 'python').
-            'auto' will prioritize PARI/GP if available.
+    Parameters
+    ----------
+    seq_id : str
+        The OEIS identifier (e.g., 'A000045').
+    n : int
+        The index of the term to retrieve.
+    backend : {'auto', 'pari', 'python'}, default 'auto'
+        The backend to use. 'auto' will prioritize PARI/GP if available.
 
-    Returns:
+    Returns
+    -------
+    Any
         The n-th term of the sequence.
 
-    Raises:
-        ValueError: If the sequence ID is not found in the registry.
+    Raises
+    ------
+    ValueError
+        If the sequence ID is not found in the registry.
     """
     if seq_id not in registry:
         raise ValueError(f"Sequence {seq_id} not implemented")

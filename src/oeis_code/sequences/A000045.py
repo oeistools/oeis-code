@@ -2,7 +2,8 @@
 # Copyright (c) 2026 Enrique Pérez Herrero
 
 """
-A000045 - Fibonacci numbers
+A000045 - Fibonacci numbers.
+
 https://oeis.org/A000045
 """
 
@@ -19,6 +20,7 @@ from ..registry import register
 def sequence(n: int, backend: Literal["python", "pari"] = "python") -> int:
     """
     Get the n-th Fibonacci number.
+
     A000045: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
     """
     if backend == "pari" and pari_backend.AVAILABLE:

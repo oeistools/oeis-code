@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
+"""Sequence modules; importing this package registers every sequence in it."""
+
 import importlib
 import pkgutil
 

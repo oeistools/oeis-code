@@ -2,7 +2,8 @@
 # Copyright (c) 2026 Enrique Pérez Herrero
 
 """
-A000040 - Prime numbers
+A000040 - Prime numbers.
+
 https://oeis.org/A000040
 """
 
@@ -19,6 +20,7 @@ from ..registry import register
 def sequence(n: int, backend: Literal["python", "pari"] = "python") -> int:
     """
     Get the n-th prime number.
+
     A000040: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...
     """
     if backend == "pari" and pari_backend.AVAILABLE:

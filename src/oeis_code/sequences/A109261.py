@@ -2,8 +2,10 @@
 # Copyright (c) 2026 Enrique Pérez Herrero
 
 """
-A109261 - Self-inverse permutation induced by Beatty sequences for
-          alpha = sqrt(2)^sqrt(2) and beta = alpha/(alpha-1).
+A109261 - Self-inverse permutation induced by Beatty sequences.
+
+Beatty sequences for alpha = sqrt(2)^sqrt(2) and beta = alpha/(alpha-1).
+
 https://oeis.org/A109261
 """
 
@@ -23,6 +25,8 @@ _beta = _alpha / (_alpha - 1)
 @lru_cache(maxsize=256)
 def sequence(n: int, backend: Literal["python", "pari"] = "python") -> int:
     """
+    Get the n-th term of the self-inverse Beatty permutation A109261.
+
     Self-inverse permutation induced by the Beatty sequences for
     alpha = sqrt(2)^sqrt(2) and beta = alpha/(alpha-1).
 
@@ -35,15 +39,23 @@ def sequence(n: int, backend: Literal["python", "pari"] = "python") -> int:
 
     A109261: 2, 1, 5, 7, 3, 9, 4, 11, 6, 13, 8, 15, 10, 17, 12, ...
 
-    Args:
-        n: The positive integer index (1-indexed).
-        backend: Computation backend ('python' or 'pari').
+    Parameters
+    ----------
+    n : int
+        The positive integer index (1-indexed).
+    backend : {'python', 'pari'}, default 'python'
+        Computation backend. PARI/GP is used only if it is available;
+        otherwise the Python path runs.
 
-    Returns:
+    Returns
+    -------
+    int
         a(n), the n-th term of the permutation.
 
-    Raises:
-        ValueError: If n < 1.
+    Raises
+    ------
+    ValueError
+        If n < 1.
     """
     if n < 1:
         raise ValueError("n must be >= 1")

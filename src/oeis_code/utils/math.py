@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
+"""Number-theory helpers: a trial-division primality test and Fibonacci numbers."""
+
 import math
 
 
@@ -8,10 +10,14 @@ def is_prime(n: int) -> bool:
     """
     Check if a number is prime using trial division.
 
-    Args:
-        n: The number to check.
+    Parameters
+    ----------
+    n : int
+        The number to check.
 
-    Returns:
+    Returns
+    -------
+    bool
         True if n is prime, False otherwise.
     """
     if n < 2:
@@ -31,12 +37,17 @@ def is_prime(n: int) -> bool:
 def fibonacci_term(n: int) -> int:
     """
     Calculate the n-th Fibonacci number (0-indexed).
+
     A000045: 0, 1, 1, 2, 3, 5, ...
 
-    Args:
-        n: The index of the term.
+    Parameters
+    ----------
+    n : int
+        The index of the term.
 
-    Returns:
+    Returns
+    -------
+    int
         The n-th Fibonacci number.
     """
     if n == 0:

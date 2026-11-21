@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
+"""Basic tests of the public ``get`` API, the registered sequences and the helpers."""
+
 import pytest
 
 from oeis_code import get

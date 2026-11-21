@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Enrique Pérez Herrero
 
+"""Pure-Python backend: computes sequence terms without external libraries."""
+
 from ..utils.math import fibonacci_term, is_prime
 
 
@@ -8,10 +10,14 @@ def n_th_prime(n: int) -> int:
     """
     Get the n-th prime number (1-indexed).
 
-    Args:
-        n: The index of the prime.
+    Parameters
+    ----------
+    n : int
+        The index of the prime.
 
-    Returns:
+    Returns
+    -------
+    int
         The n-th prime number.
     """
     count = 0
@@ -29,10 +35,14 @@ def fibonacci(n: int) -> int:
     """
     Get the n-th Fibonacci number.
 
-    Args:
-        n: The index of the Fibonacci number.
+    Parameters
+    ----------
+    n : int
+        The index of the Fibonacci number.
 
-    Returns:
+    Returns
+    -------
+    int
         The n-th Fibonacci number.
     """
     return fibonacci_term(n)
